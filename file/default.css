@@ -1,15 +1,11 @@
 body {
   margin: 0;
   padding: 0;
-  background-image: url('../img2.jpg'); /* Adjust path if needed */
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-attachment: fixed; /* Optional: for a parallax effect */
+  background: transparent;
   font-size: 14px;
-  font-family: sans-serif;
-  color: white;
-  overflow: auto;
+  color: #5d4037;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 a {
@@ -22,27 +18,16 @@ a {
 #wrap {
   position: relative;
   margin: 0 auto;
-  width: 1100px;
-  height: 680px;
+  width: 100%;
+  max-width: 1100px;
+  min-height: 680px;
   margin-top: 10px;
 }
 #text {
-  width: 292px;
-  height: 560px;
-  left: 120px;
-  top: 0.1px;
-  position: absolute;
+  display: none;
 }
 #code {
   display: none;
-  color: #d63384;
-  background-color: #fff0f5;    /* black background */
-  padding: 15px;              /* space around text */    
-  font-size: larger;
-  font-weight: bolder;
-  line-height: 25px;
-  margin-top: 70px;
-  width: fit-content;         /* ensures it only wraps the text */
 }
 #clock-box {
   position: absolute;

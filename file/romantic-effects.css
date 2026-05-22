@@ -1,0 +1,418 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Great+Vibes&display=swap');
+
+:root {
+  --rose: #e91e63;
+  --rose-light: #ff8fab;
+  --blush: #fff0f6;
+  --gold: #ffd6e7;
+}
+
+body {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+body::before {
+  display: none;
+}
+
+#ambient-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+  opacity: 0.75;
+}
+
+#sparkles,
+#floating-hearts,
+#butterflies {
+  position: absolute;
+  inset: 0;
+}
+
+.sparkle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fff 30%, rgba(255, 182, 193, 0.8) 100%);
+  animation: twinkle var(--dur, 3s) ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+  opacity: 0;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0; transform: scale(0.5); }
+  50% { opacity: 0.9; transform: scale(1.2); }
+}
+
+.floating-heart {
+  position: absolute;
+  font-size: var(--size, 18px);
+  opacity: 0;
+  animation: float-up var(--dur, 12s) ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+  filter: drop-shadow(0 0 6px rgba(233, 30, 99, 0.4));
+  user-select: none;
+}
+
+@keyframes float-up {
+  0% {
+    opacity: 0;
+    transform: translateY(100vh) rotate(0deg) scale(0.6);
+  }
+  8% { opacity: 0.85; }
+  90% { opacity: 0.6; }
+  100% {
+    opacity: 0;
+    transform: translateY(-15vh) rotate(var(--rot, 25deg)) scale(1);
+  }
+}
+
+/* Butterflies */
+.butterfly {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  animation: butterfly-path var(--flight-dur, 18s) ease-in-out infinite;
+  animation-delay: var(--flight-delay, 0s);
+  opacity: 0.65;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
+  will-change: transform;
+}
+
+.butterfly-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  animation: wing-flap 0.35s ease-in-out infinite alternate;
+}
+
+.butterfly .wing {
+  position: absolute;
+  top: 6px;
+  width: 14px;
+  height: 18px;
+  border-radius: 50% 50% 45% 45%;
+  background: linear-gradient(135deg, var(--wing-a, #ff9ecd) 0%, var(--wing-b, #e91e63) 55%, #c2185b 100%);
+  opacity: 0.92;
+}
+
+.butterfly .wing::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.45);
+  top: 4px;
+}
+
+.butterfly .wing-left {
+  left: 2px;
+  transform-origin: right center;
+  transform: rotate(-25deg);
+}
+
+.butterfly .wing-left::after { left: 3px; }
+
+.butterfly .wing-right {
+  right: 2px;
+  transform-origin: left center;
+  transform: rotate(25deg) scaleX(-1);
+}
+
+.butterfly .wing-right::after { right: 3px; left: auto; }
+
+.butterfly .body {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 3px;
+  height: 14px;
+  margin: -7px 0 0 -1.5px;
+  background: linear-gradient(180deg, #5d4037, #3e2723);
+  border-radius: 2px;
+  z-index: 2;
+}
+
+.butterfly .antenna {
+  position: absolute;
+  top: 8px;
+  width: 1px;
+  height: 6px;
+  background: #5d4037;
+  border-radius: 1px;
+}
+
+.butterfly .antenna-left {
+  left: 13px;
+  transform: rotate(-35deg);
+}
+
+.butterfly .antenna-right {
+  right: 13px;
+  transform: rotate(35deg);
+}
+
+@keyframes wing-flap {
+  from { transform: scaleY(1) scaleX(1); }
+  to { transform: scaleY(0.75) scaleX(1.08); }
+}
+
+@keyframes butterfly-path {
+  0% { transform: translate(5vw, 70vh) rotate(-10deg); }
+  20% { transform: translate(25vw, 40vh) rotate(15deg); }
+  40% { transform: translate(55vw, 55vh) rotate(-5deg); }
+  60% { transform: translate(75vw, 25vh) rotate(20deg); }
+  80% { transform: translate(40vw, 15vh) rotate(-15deg); }
+  100% { transform: translate(90vw, 60vh) rotate(10deg); }
+}
+
+.butterfly:nth-child(2) { --flight-dur: 22s; --wing-a: #b39ddb; --wing-b: #7e57c2; }
+.butterfly:nth-child(2) .butterfly-inner { animation-duration: 0.42s; }
+.butterfly:nth-child(2) { animation-name: butterfly-path-2; }
+
+.butterfly:nth-child(3) { --flight-dur: 16s; --wing-a: #ffcc80; --wing-b: #ff9800; }
+.butterfly:nth-child(3) { animation-name: butterfly-path-3; }
+
+.butterfly:nth-child(4) { --flight-dur: 25s; --wing-a: #f48fb1; --wing-b: #ec407a; }
+.butterfly:nth-child(4) { animation-name: butterfly-path-4; }
+
+.butterfly:nth-child(5) { --flight-dur: 20s; --wing-a: #ce93d8; --wing-b: #ab47bc; }
+.butterfly:nth-child(5) { animation-name: butterfly-path-5; }
+
+.butterfly:nth-child(6) { --flight-dur: 19s; --wing-a: #ef9a9a; --wing-b: #e57373; }
+.butterfly:nth-child(6) { animation-name: butterfly-path-6; }
+
+@keyframes butterfly-path-2 {
+  0% { transform: translate(80vw, 20vh) rotate(5deg); }
+  25% { transform: translate(60vw, 50vh) rotate(-20deg); }
+  50% { transform: translate(30vw, 30vh) rotate(10deg); }
+  75% { transform: translate(15vw, 60vh) rotate(-10deg); }
+  100% { transform: translate(70vw, 75vh) rotate(15deg); }
+}
+
+@keyframes butterfly-path-3 {
+  0% { transform: translate(50vw, 80vh) rotate(0deg); }
+  33% { transform: translate(20vw, 50vh) rotate(25deg); }
+  66% { transform: translate(85vw, 35vh) rotate(-20deg); }
+  100% { transform: translate(45vw, 10vh) rotate(5deg); }
+}
+
+@keyframes butterfly-path-4 {
+  0% { transform: translate(10vw, 40vh); }
+  50% { transform: translate(65vw, 65vh); }
+  100% { transform: translate(95vw, 30vh); }
+}
+
+@keyframes butterfly-path-5 {
+  0% { transform: translate(35vw, 15vh); }
+  40% { transform: translate(90vw, 55vh); }
+  100% { transform: translate(5vw, 45vh); }
+}
+
+@keyframes butterfly-path-6 {
+  0% { transform: translate(70vw, 85vh); }
+  30% { transform: translate(40vw, 20vh); }
+  100% { transform: translate(25vw, 70vh); }
+}
+
+/* Hero title */
+#love-header {
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  padding: 28px 16px 8px;
+  pointer-events: none;
+}
+
+#love-header h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  font-weight: 400;
+  margin: 0;
+  background: linear-gradient(120deg, #c2185b, #e91e63, #ff8fab, #e91e63);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 6s linear infinite;
+  text-shadow: none;
+  filter: drop-shadow(0 2px 12px rgba(233, 30, 99, 0.25));
+}
+
+#love-header p {
+  margin: 8px 0 0;
+  font-size: 1.15rem;
+  font-style: italic;
+  color: rgba(194, 24, 91, 0.85);
+  letter-spacing: 0.04em;
+}
+
+@keyframes shimmer {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+#main {
+  position: relative;
+  z-index: 2;
+}
+
+#wrap {
+  border-radius: 20px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  overflow: visible;
+}
+
+#code {
+  display: none;
+  color: #ad1457;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 240, 245, 0.9));
+  padding: 20px 22px;
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.65;
+  margin-top: 70px;
+  width: fit-content;
+  max-width: 320px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 182, 193, 0.6);
+  box-shadow:
+    0 8px 32px rgba(233, 30, 99, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
+  animation: message-glow 4s ease-in-out infinite;
+}
+
+@keyframes message-glow {
+  0%, 100% { box-shadow: 0 8px 32px rgba(233, 30, 99, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.9); }
+  50% { box-shadow: 0 12px 40px rgba(233, 30, 99, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.9); }
+}
+
+.say {
+  display: inline-block;
+  margin-left: 5px;
+  transition: transform 0.3s ease;
+}
+
+.say:hover {
+  transform: translateX(4px);
+  color: #c2185b;
+}
+
+#canvas {
+  border-radius: 12px;
+}
+
+#click-hint {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+  padding: 14px 28px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem;
+  font-style: italic;
+  color: #ad1457;
+  background: rgba(255, 255, 255, 0.88);
+  border: 2px solid rgba(233, 30, 99, 0.35);
+  border-radius: 50px;
+  box-shadow: 0 8px 24px rgba(233, 30, 99, 0.15);
+  pointer-events: none;
+  animation: hint-pulse 2s ease-in-out infinite;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+#click-hint.hidden {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.9);
+}
+
+@keyframes hint-pulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -50%) scale(1.04); }
+}
+
+#music-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1001;
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff8fab, #e91e63);
+  color: white;
+  font-size: 1.35rem;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(233, 30, 99, 0.35);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+#music-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 22px rgba(233, 30, 99, 0.45);
+}
+
+#music-btn.playing {
+  animation: music-pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes music-pulse {
+  0%, 100% { box-shadow: 0 4px 16px rgba(233, 30, 99, 0.35); }
+  50% { box-shadow: 0 4px 28px rgba(233, 30, 99, 0.55); }
+}
+
+.download-wrap {
+  position: fixed;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+}
+
+.download-btn {
+  padding: 12px 28px;
+  background: linear-gradient(135deg, #ff8fab 0%, #e91e63 50%, #c2185b 100%);
+  background-size: 200% auto;
+  border: none;
+  border-radius: 50px;
+  color: white;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(233, 30, 99, 0.35);
+  transition: transform 0.3s ease, background-position 0.4s ease, box-shadow 0.3s ease;
+}
+
+.download-btn:hover {
+  transform: translateY(-3px);
+  background-position: right center;
+  box-shadow: 0 10px 28px rgba(233, 30, 99, 0.45);
+}
+
+#cursor-glow {
+  position: fixed;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 143, 171, 0.25) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.3s;
+  opacity: 0;
+}
+
+body.interactive #cursor-glow {
+  opacity: 1;
+}

@@ -1,217 +1,700 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+
+<html lang="en">
+
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>unrequited love</title>	    
-    <link type="text/css" rel="stylesheet" href="./file/default.css">
-    <script type="text/javascript" src="./file/jquery.min.js"></script>
-    <script type="text/javascript" src="./file/jscex.min.js"></script>
-    <script type="text/javascript" src="./file/jscex-parser.js"></script>
-    <script type="text/javascript" src="./file/jscex-jit.js"></script>
-    <script type="text/javascript" src="./file/jscex-builderbase.min.js"></script>
-    <script type="text/javascript" src="./file/jscex-async.min.js"></script>
-    <script type="text/javascript" src="./file/jscex-async-powerpack.min.js"></script>
-    <script type="text/javascript" src="./file/functions.js" charset="utf-8"></script>
-    <script type="text/javascript" src="./file/love.js" charset="utf-8"></script>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>7 Months — For You, Baby 💕</title>
+
+    <link rel="stylesheet" href="./file/default.css">
+
+    <link rel="stylesheet" href="./file/romantic-effects.css">
+
+    <link rel="stylesheet" href="./file/site.css">
+
+    <script src="./file/jquery.min.js"></script>
+
+    <script src="./file/jscex.min.js"></script>
+
+    <script src="./file/jscex-parser.js"></script>
+
+    <script src="./file/jscex-jit.js"></script>
+
+    <script src="./file/jscex-builderbase.min.js"></script>
+
+    <script src="./file/jscex-async.min.js"></script>
+
+    <script src="./file/jscex-async-powerpack.min.js"></script>
+
+    <script src="./file/functions.js"></script>
+
+    <script src="./file/love.js"></script>
+
+    <script src="./file/romantic-effects.js"></script>
+
+    <script src="./file/site.js"></script>
+
     <script>
+
         function playAudio() {
+
             var audio = document.getElementById("myAudio");
-            audio.play();
+
+            if (audio) audio.play().catch(function() {});
+
         }
+
     </script>
+
 </head>
+
 <body>
-    <div id="main">
-        <div id="error"><a href="http://www.google.cn/chrome/intl/zh-CN/landing_chrome.html?hl=zh-CN&brand=CHMI">Chrome</a> (<a href="http://firefox.com.cn/download/">Firefox</a>)</div>
-        <audio autoplay="autoplay" height="100" width="100" id="myAudio">
-            <source src="aud.mp3" type="audio/mp3" />
-            <embed height="100" width="100" src="aud.mp3" />
-        </audio>
-        <div id="wrap">
-            <div id="text">
-                <div id="code">
-                    <span class="say">My beautiful Nila ma 💞</span><br>
-                    <span class="say">Madam US porenga</span><br>
-                    <span class="say">Paathu safe fa poonga Jolly ah enjoy panunga.</span>
-                    <span class="say">Happy Happy ah irunga💕</span>
-                    <span class="say">I will miss you the most🥺</span>
-                    <span class="say">I will always love u the same (the most)🥺❤️.</span><br>
-                    <span class="say">Happy Journey Thango ❤️</span><br>
-                    <span class="say">I may never find words beautiful enough to describe all that you mean to me.</span><br>
-                    <span class="say">U mean everything to me. Enala pesamalaam iruka mudiyala😭😭. It sucks🥺</span><br>
-                    <span class="say">Sorry for everything that I did to make you feel bad I didnt mean to do anything that hurts you.</span>
-                    <span class="say">I will do anything in the universe to make you the happiest. Bye azhagii🥺. Miss you Romba 😭😭. </span>
-                    <span class="say">Ahhh ur eyes are killing me kutti ma❤️😭😭. </span>
-                </div>
-            </div>
-            <div id="clock-box">
-                <span id="clock">577 days 0 hours 0 minutes 0 seconds</span> <!-- Change to "6940 days..." if needed -->
-            </div>
-            <canvas id="canvas" width="1100" height="680"></canvas>
-        </div>
+
+    <div id="page-bg" role="img" aria-label="Our photo background"></div>
+
+
+
+    <div id="ambient-layer">
+
+        <div id="sparkles"></div>
+
+        <div id="floating-hearts"></div>
+
+        <div id="butterflies"></div>
+
     </div>
 
+    <div id="cursor-glow"></div>
+
+
+
+    <nav id="site-nav" aria-label="Page sections">
+
+        <a href="#intro" title="Welcome">Welcome</a>
+
+        <a href="#tree-section" title="Love tree">Tree</a>
+
+        <a href="#letter-section" title="Letter">Letter</a>
+
+        <a href="#timeline-section" title="Timeline">Timeline</a>
+
+        <a href="#reasons-section" title="Reasons">Reasons</a>
+
+        <a href="#counter-section" title="Counter">Counter</a>
+
+        <a href="#promises-section" title="Promises">Promises</a>
+
+        <a href="#surprise-section" title="Surprise">Surprise</a>
+
+    </nav>
+
+
+
+    <button type="button" id="music-btn" title="Play music">🎵</button>
+
+    <audio id="myAudio" loop>
+
+        <source src="aud.mp3" type="audio/mp3">
+
+    </audio>
+
+
+
+    <!-- PAGE 1: Welcome -->
+
+    <section id="intro" class="page-section">
+
+        <div class="intro-box">
+
+            <p class="intro-month">7 Months</p>
+
+            <p class="intro-tagline">Every day with you feels like a little forever.<br>This is our story — made only for you.</p>
+
+            <button type="button" class="btn-primary" id="enter-btn">Open our love story 💕</button>
+
+        </div>
+
+        <span class="scroll-hint">↓ scroll for more</span>
+
+    </section>
+
+
+
+    <!-- PAGE 2: Heart tree -->
+
+    <section id="tree-section" class="page-section">
+
+        <header id="love-header">
+
+            <h1>Seven Months of Us</h1>
+
+            <p>Click the glowing heart on the tree — then scroll down for your letter ✨</p>
+
+        </header>
+
+        <div class="tree-wrap-outer">
+
+            <div id="wrap">
+
+                <div id="text"><div id="code"></div></div>
+
+                <div id="click-hint">💗 Click the heart seed to bloom our love tree</div>
+
+                <canvas id="canvas" width="1100" height="680"></canvas>
+
+            </div>
+
+        </div>
+
+        <a href="#letter-section" class="scroll-hint" style="margin-top:32px;display:block;">↓ Your full letter is below</a>
+
+    </section>
+
+
+
+    <!-- PAGE 3: Full love letter (scrollable) -->
+
+    <section id="letter-section" class="page-section">
+
+        <div class="section-card">
+
+            <h2 class="section-title">A Letter For You</h2>
+
+            <p class="section-subtitle">Something I want to say,</p>
+
+            <div id="full-letter" class="letter-content">
+
+                <span class="letter-line">My beautiful baby 💞</span>
+
+                <span class="letter-line">It's our 7 months ❤️</span>
+
+                <span class="letter-line">yes, U came unexpectedly in my life</span>
+
+                <span class="letter-line">but I am so happy to have you in my life.</span>
+
+                <span class="letter-line">I love you so much baby 💕</span>
+
+                <span class="letter-line">I will miss you the most 🥺</span>
+
+                <span class="letter-line">I will always love you the same — the most 🥺❤️</span>
+
+                <span class="letter-line">I will never leave you alone ❤️</span>
+
+                <span class="letter-line">I may never find words beautiful enough to describe all that you mean to me.</span>
+
+                <span class="letter-line">You mean everything to me.</span>
+
+                <span class="letter-line">Sorry for everything that I did to make you feel bad — I didn't mean to do anything that hurts you.</span>
+
+                <span class="letter-line">I will do anything in the universe to make you the happiest. Ummaaahhhhhhhhhh chelloooooo 😭😭</span>
+
+                <span class="letter-line">Please don't ever leave me ❤️😭😭</span>
+
+                <p class="letter-signature">I am Forever yours 💕</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- PAGE 4: 7-month journey -->
+
+    <section id="timeline-section" class="page-section">
+
+        <div class="section-card">
+
+            <h2 class="section-title">Our Journey</h2>
+
+            <p class="section-subtitle">Month by month — every memory, every photo, every bit of us</p>
+
+            <div class="timeline">
+
+                <div class="timeline-item">
+                    <div class="timeline-card">
+                        <div class="timeline-photo-wrap">
+                            <span class="timeline-badge">Month 0</span>
+                            <img class="timeline-photo" src="./images/journey/month0.png" alt="Where it all started">
+                        </div>
+                        <div class="timeline-body">
+                            <h3 class="timeline-month">Where It All Started</h3>
+                            <p class="timeline-text">The moment everything changed — when feelings became real.</p>
+                            <p class="timeline-quote">You said: <strong>"Una enaku romba pudikum"</strong><br>I replied: <strong>"Enaku unna romba pudikum"</strong> 💕</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-card">
+                        <div class="timeline-photo-wrap">
+                            <span class="timeline-badge">Month 1</span>
+                            <img class="timeline-photo" src="./images/journey/month1.png" alt="Pondicherry trip">
+                        </div>
+                        <div class="timeline-body">
+                            <h3 class="timeline-month">Pondicherry — Our First Trip</h3>
+                            <p class="timeline-text">Our very first trip together. New places, new memories, and you right beside me — that's all I ever needed.</p>
+                            <span class="timeline-highlight">✈️ Our first adventure</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-card">
+                        <div class="timeline-photo-wrap">
+                            <span class="timeline-badge">Month 2</span>
+                            <img class="timeline-photo" src="./images/journey/month2.png" alt="Vellore trip">
+                        </div>
+                        <div class="timeline-body">
+                            <h3 class="timeline-month">Vellore — Our Second Trip</h3>
+                            <p class="timeline-text">Trip number two — and somehow it felt even better than the first. Every journey with you feels like home.</p>
+                            <span class="timeline-highlight">🚗 Second trip, deeper love</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-card">
+                        <div class="timeline-photo-wrap">
+                            <span class="timeline-badge">Month 3</span>
+                            <img class="timeline-photo" src="./images/journey/month3.png" alt="New Year and Wonderla">
+                        </div>
+                        <div class="timeline-body">
+                            <h3 class="timeline-month">New Year With You &amp; Wonderla</h3>
+                            <p class="timeline-text">Ringing in the new year with you, then laughing our hearts out at Wonderla. Best start to any year.</p>
+                            <span class="timeline-highlight">🎢 Wonderla + New Year magic</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-card">
+                        <div class="timeline-photo-wrap">
+                            <span class="timeline-badge">Month 4</span>
+                            <img class="timeline-photo" src="./images/journey/month4.png" alt="Valentine's month">
+                        </div>
+                        <div class="timeline-body">
+                            <h3 class="timeline-month">Valentine's Month</h3>
+                            <p class="timeline-text">The month of love — and you made every single day feel like Valentine's, not just one.</p>
+                            <span class="timeline-highlight">💝 Valentine's month with you</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-card">
+                        <div class="timeline-photo-wrap">
+                            <span class="timeline-badge">Month 5</span>
+                            <img class="timeline-photo" src="./images/journey/month5.png" alt="Beach dates">
+                        </div>
+                        <div class="timeline-body">
+                            <h3 class="timeline-month">More Beach Dates</h3>
+                            <p class="timeline-text">Sand, sea breeze, and you — one of our most liked pictures from our beach dates together.</p>
+                            <span class="timeline-highlight">🌊 One of our favourite pics</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-card">
+                        <div class="timeline-photo-wrap">
+                            <span class="timeline-badge">Month 6</span>
+                            <img class="timeline-photo" src="./images/journey/month6.png" alt="T Nagar shopping date">
+                        </div>
+                        <div class="timeline-body">
+                            <h3 class="timeline-month">T Nagar Shopping Date</h3>
+                            <p class="timeline-text">Our T Nagar day — streets, lights, and you smiling beside me. The most liked date for me, baby.</p>
+                            <span class="timeline-highlight">🛍️ My most liked date with you</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-card">
+                        <div class="timeline-photo-wrap">
+                            <span class="timeline-badge">Month 7</span>
+                            <img class="timeline-photo" src="./images/journey/month7.png" alt="Seven months happy">
+                        </div>
+                        <div class="timeline-body">
+                            <h3 class="timeline-month">Month 7 — So Happy</h3>
+                            <p class="timeline-text">Seven months and I'm still the happiest. I want this forever — and our beach dates? They never have to end.</p>
+                            <span class="timeline-highlight">♾️ Continue forever — beach dates continue 🌊</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- PAGE 5: Reasons (flip cards) -->
+
+    <section id="reasons-section" class="page-section">
+
+        <div class="section-card">
+
+            <h2 class="section-title">7 Reasons I Love You</h2>
+
+            <p class="section-subtitle">Tap each card to reveal</p>
+
+            <div class="reasons-grid">
+
+                <div class="reason-card"><div class="reason-card-inner">
+
+                    <div class="reason-front">1</div>
+
+                    <div class="reason-back">Your smile that makes my whole day </div>
+
+                </div></div>
+
+                <div class="reason-card"><div class="reason-card-inner">
+
+                    <div class="reason-front">2</div>
+
+                    <div class="reason-back">The way you care about me ,the everything the way u treat me</div>
+
+                </div></div>
+
+                <div class="reason-card"><div class="reason-card-inner">
+
+                    <div class="reason-front">3</div>
+
+                    <div class="reason-back">your eyes your nose your lips your smile your everything</div>
+
+                </div></div>
+
+                <div class="reason-card"><div class="reason-card-inner">
+
+                    <div class="reason-front">4</div>
+
+                    <div class="reason-back">You baby, you are different from others… you may ask how?
+                        you understand me without even saying a word. you understand me without even saying a word,with you I smile from my heart✨
+                        </div>
+
+                </div></div>
+
+                <div class="reason-card"><div class="reason-card-inner">
+
+                    <div class="reason-front">5</div>
+
+                    <div class="reason-back">I just dont know I love you the most</div>
+
+                </div></div>
+
+                <div class="reason-card"><div class="reason-card-inner">
+
+                    <div class="reason-front">6</div>
+
+                    <div class="reason-back">You're my safe place , you are my everything</div>
+
+                </div></div>
+
+                <div class="reason-card"><div class="reason-card-inner">
+
+                    <div class="reason-front">7</div>
+
+                    <div class="reason-back">Because its you baby . only you baby. its Always you .</div>
+
+                </div></div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- PAGE 6: Live counter -->
+
+    <section id="counter-section" class="page-section">
+
+        <div class="section-card" id="months-counter">
+
+            <h2 class="section-title">Time With You</h2>
+
+            <p class="counter-big">7</p>
+
+            <p class="counter-label">beautiful months together</p>
+
+            <div class="counter-stats">
+
+                <div class="stat-box"><span class="stat-num" id="stat-days">0</span><span class="stat-label">days</span></div>
+
+                <div class="stat-box"><span class="stat-num" id="stat-hours">0</span><span class="stat-label">hours</span></div>
+
+                <div class="stat-box"><span class="stat-num" id="stat-minutes">0</span><span class="stat-label">minutes</span></div>
+
+                <div class="stat-box"><span class="stat-num" id="stat-months">7</span><span class="stat-label">months</span></div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- PAGE 7: Promises -->
+
+    <section id="promises-section" class="page-section">
+
+        <div class="section-card">
+
+            <h2 class="section-title">My Promises To You</h2>
+
+            <p class="section-subtitle">Not just words — a promise for every month ahead</p>
+
+            <ul class="promises-list">
+
+                <li>I will always choose you, even on hard days.</li>
+
+                <li>I will listen, understand, and never stop trying for us.</li>
+
+                <li>I will make you feel loved, valued, and never alone.</li>
+
+                <li>I will make you baby smile today, tomorrow, and forever.</li>
+
+                <li>I will grow with you through every month and every year.</li>
+
+                <li>I will never take your heart for granted.</li>
+
+                <li>I will love you more with every chapter we write together.</li>
+
+            </ul>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- PAGE 8: Final surprise -->
+
+    <section id="surprise-section" class="page-section">
+
+        <div class="section-card" style="text-align:center;">
+
+            <h2 class="section-title">One Last Thing...</h2>
+
+            <p class="section-subtitle">For the girl who made these 7 months the best of my life</p>
+
+            <button type="button" class="btn-primary surprise-btn" id="surprise-btn">Click for your surprise 💖</button>
+
+            <p id="surprise-message">You are my today, my tomorrow, and my always. Happy 7 months, my baby. I love you infinity. ❤️</p>
+
+            <div class="download-wrap">
+
+                <a href="https://drive.google.com/uc?export=download&id=1UFVMwW8ODpRx7Ju9hGbYPYsnEFnas5QF" target="_blank" rel="noopener">
+
+                    <button type="button" class="download-btn">💖 Save our background picture 💖</button>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
     <script>
+
     (function() {
+
         var canvas = $('#canvas');
-		
+
         if (!canvas[0].getContext) {
+
             $("#error").show();
-            return false;
+
+            return;
+
         }
 
-        var width = canvas.width();
-        var height = canvas.height();        
+
+
+        var width = 1100;
+        var height = 680;
         canvas.attr("width", width);
         canvas.attr("height", height);
+        canvas.css({ maxWidth: '100%', height: 'auto', width: '100%' });
+
+
 
         var opts = {
-            seed: {
-                x: width / 2 - 20,
-                color: "rgb(190, 26, 37)",
-                scale: 2
-            },
+
+            seed: { x: width / 2 - 20, color: "rgb(233, 30, 99)", scale: 2 },
+
             branch: [
+
                 [535, 680, 570, 250, 500, 200, 30, 100, [
-                    [540, 500, 455, 417, 340, 400, 13, 100, [
-                        [450, 435, 434, 430, 394, 395, 2, 40]
-                    ]],
-                    [550, 445, 600, 356, 680, 345, 12, 100, [
-                        [578, 400, 648, 409, 661, 426, 3, 80]
-                    ]],
+
+                    [540, 500, 455, 417, 340, 400, 13, 100, [[450, 435, 434, 430, 394, 395, 2, 40]]],
+
+                    [550, 445, 600, 356, 680, 345, 12, 100, [[578, 400, 648, 409, 661, 426, 3, 80]]],
+
                     [539, 281, 537, 248, 534, 217, 3, 40],
+
                     [546, 397, 413, 247, 328, 244, 9, 80, [
+
                         [427, 286, 383, 253, 371, 205, 2, 40],
+
                         [498, 345, 435, 315, 395, 330, 4, 60]
+
                     ]],
-                    [546, 357, 608, 252, 678, 221, 6, 100, [
-                        [590, 293, 646, 277, 648, 271, 2, 80]
-                    ]]
-                ]] 
+
+                    [546, 357, 608, 252, 678, 221, 6, 100, [[590, 293, 646, 277, 648, 271, 2, 80]]]
+
+                ]]
+
             ],
-            bloom: {
-                num: 700,
-                width: 1080,
-                height: 650,
-            },
-            footer: {
-                width: 1200,
-                height: 5,
-                speed: 10,
-            }
-        }
+
+            bloom: { num: 700, width: 1080, height: 650 },
+
+            footer: { width: 1200, height: 5, speed: 10 }
+
+        };
+
+
 
         var tree = new Tree(canvas[0], width, height, opts);
+
         var seed = tree.seed;
+
         var foot = tree.footer;
+
         var hold = 1;
 
+
+
         canvas.click(function(e) {
+
             playAudio();
-            var offset = canvas.offset(), x, y;
-            x = e.pageX - offset.left;
-            y = e.pageY - offset.top;
+
+            if (window.romanticEffects) romanticEffects.hideClickHint();
+
+            var offset = canvas.offset(), x = e.pageX - offset.left, y = e.pageY - offset.top;
+
             if (seed.hover(x, y)) {
-                hold = 0; 
-                canvas.unbind("click");
-                canvas.unbind("mousemove");
-                canvas.removeClass('hand');
+
+                hold = 0;
+
+                canvas.unbind("click").unbind("mousemove").removeClass('hand');
+
             }
+
         }).mousemove(function(e) {
-            var offset = canvas.offset(), x, y;
-            x = e.pageX - offset.left;
-            y = e.pageY - offset.top;
+
+            var offset = canvas.offset(), x = e.pageX - offset.left, y = e.pageY - offset.top;
+
             canvas.toggleClass('hand', seed.hover(x, y));
+
         });
 
+
+
         var seedAnimate = eval(Jscex.compile("async", function () {
+
             seed.draw();
-            while (hold) {
-                $await(Jscex.Async.sleep(10));
-            }
-            while (seed.canScale()) {
-                seed.scale(0.95);
-                $await(Jscex.Async.sleep(10));
-            }
-            while (seed.canMove()) {
-                seed.move(0, 2);
-                foot.draw();
-                $await(Jscex.Async.sleep(10));
-            }
+
+            while (hold) { $await(Jscex.Async.sleep(10)); }
+
+            while (seed.canScale()) { seed.scale(0.95); $await(Jscex.Async.sleep(10)); }
+
+            while (seed.canMove()) { seed.move(0, 2); foot.draw(); $await(Jscex.Async.sleep(10)); }
+
         }));
+
+
 
         var growAnimate = eval(Jscex.compile("async", function () {
-            do {
-                tree.grow();
-                $await(Jscex.Async.sleep(10));
-            } while (tree.canGrow());
+
+            do { tree.grow(); $await(Jscex.Async.sleep(10)); } while (tree.canGrow());
+
         }));
+
+
 
         var flowAnimate = eval(Jscex.compile("async", function () {
-            do {
-                tree.flower(2);
-                $await(Jscex.Async.sleep(10));
-            } while (tree.canFlower());
+
+            do { tree.flower(2); $await(Jscex.Async.sleep(10)); } while (tree.canFlower());
+
         }));
 
+
+
         var moveAnimate = eval(Jscex.compile("async", function () {
+
             tree.snapshot("p1", 240, 0, 610, 680);
-            while (tree.move("p1", 500, 0)) {
-                foot.draw();
-                $await(Jscex.Async.sleep(10));
-            }
+
+            while (tree.move("p1", 500, 0)) { foot.draw(); $await(Jscex.Async.sleep(10)); }
+
             foot.draw();
+
             tree.snapshot("p2", 500, 0, 610, 680);
 
             canvas.parent().css("background", "url(" + tree.toDataURL('image/png') + ")");
+
             canvas.css("background", "#ffe");
+
             $await(Jscex.Async.sleep(300));
+
             canvas.css("background", "none");
+
         }));
+
+
 
         var textAnimate = eval(Jscex.compile("async", function () {
-            $("#code").show().typewriter();
+
+            if (window.siteApp) {
+
+                siteApp.startLetterTypewriter();
+
+                setTimeout(function() {
+
+                    document.getElementById('letter-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+                }, 400);
+
+            }
+
         }));
-	    
-        var runAsync = eval(Jscex.compile("async", function () {
+
+
+
+        eval(Jscex.compile("async", function () {
+
             $await(seedAnimate());
+
             $await(growAnimate());
+
             $await(flowAnimate());
+
             $await(moveAnimate());
+
             textAnimate().start();
-        }));
 
-        runAsync().start();
+        }))().start();
+
     })();
+
     </script>
-    
-    <div style="position: absolute;
-  bottom: 0.5px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1000;">
-    <a href="https://drive.google.com/uc?export=download&id=1nIPTATG40O0tkGWh6vSYAZXbdPGQlP-f" target="_blank">
-        <button style="
-            padding: 10px 20px;
-            background-color: #ff69b4;
-            border: none;
-            border-radius: 25px;
-            color: white;
-            font-size: 16px;
-            cursor: pointer;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: background-color 0.3s;
-        " 
-        onmouseover="this.style.backgroundColor='#ff85c1'" 
-        onmouseout="this.style.backgroundColor='#ff69b4'">
-            💖 Click here if u want the background pic 💖
-        </button>
-    </a>
-    </div>
-
-
-
-
 
 </body>
+
 </html>
+
+
